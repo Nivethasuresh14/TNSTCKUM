@@ -1,0 +1,149 @@
+<mat-card>
+  
+    <mat-grid-list cols="2" rowHeight="2:1">
+        <mat-grid-tile>
+            <div class="example-container">
+    
+            
+
+            <mat-form-field appearance="fill">
+                <mat-label>Select an option</mat-label>
+                <mat-select >
+                  <mat-option>Select</mat-option>
+                  <mat-option value="01/2022">01/2022</mat-option>
+                  <mat-option value="02/2022">02/2022</mat-option>
+                  <mat-option value="03/2022">03/2022</mat-option>
+                  <mat-option value="04/2022">04/2022</mat-option>
+                  <mat-option value="05/2022">05/2022</mat-option>
+                  <mat-option value="06/2022">06/2022</mat-option>
+                  <mat-option value="07/2022">07/2022</mat-option>
+                  <mat-option value="08/2022">08/2022</mat-option>
+                  <mat-option value="09/2022">09/2022</mat-option>
+                  <mat-option value="10/2022">10/2022</mat-option>
+                  <mat-option value="11/2022">11/2022</mat-option>
+                  <mat-option value="12/2022">12/2022</mat-option>
+               
+              
+                </mat-select>
+              </mat-form-field>
+
+            <mat-form-field  appearance="fill">
+                <mat-label>Staff No</mat-label>
+                <input matInput #input maxlength="10" (change)="staffno()" placeholder="">
+                
+              </mat-form-field>
+              <mat-list>
+                <mat-list-item>{{emp}}</mat-list-item>
+                <mat-list-item>{{branch}}</mat-list-item>
+                <mat-list-item>{{dept}}</mat-list-item>
+              </mat-list>
+              <div class="example-container">
+                <mat-form-field appearance="fill">
+                    <mat-label>Date</mat-label>
+                    <input matInput [matDatepicker]="picker">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Date</mat-label>
+                    <input matInput [matDatepicker]="picker2">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker #picker2></mat-datepicker>
+                  </mat-form-field>
+              
+              </div>      <div class="example-container">
+                <mat-form-field  appearance="fill">
+                  <mat-label>Time</mat-label>
+                  <input matInput #input  placeholder="">
+                </mat-form-field>
+                <mat-form-field  appearance="fill">
+                    <mat-label>Time</mat-label>
+                    <input matInput #input  placeholder="">
+                  </mat-form-field>
+                  
+                    <input style="width:50%"
+                    formControlName="file"
+                    id="file" 
+                    type="file" 
+                    multiple
+                    class="form-control"
+                    >               
+              </div>
+              </div>
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <div class="example-container">
+    
+                <mat-form-field  appearance="fill">
+                    <mat-label>Periods</mat-label>
+                    <input matInput #input maxlength="10" placeholder="">
+                  </mat-form-field>
+                  <mat-form-field  appearance="fill">
+                    <mat-label>Air Bill</mat-label>
+                    <input matInput type="number" #input maxlength="10" placeholder=""  [(ngModel)]="airbill"  >
+                  </mat-form-field>
+                  <div class="example-container">
+    
+                    <mat-form-field  appearance="fill">
+                        <mat-label>KMS</mat-label>
+                        <input matInput #input maxlength="10" placeholder="">
+                      </mat-form-field>
+                      <mat-form-field  appearance="fill">
+                        <mat-label>Bus Ticket</mat-label>
+                        <input matInput type="number" #input maxlength="10" placeholder="" [(ngModel)]="busbill"  >
+                      </mat-form-field>
+            
+                  
+                  </div>    <div class="example-container">
+    
+                    <mat-form-field  appearance="fill">
+                        <mat-label>TA Rate</mat-label>
+                        <input matInput type="number" #input maxlength="10" placeholder=""  [(ngModel)]="tabill"   >
+                      </mat-form-field>
+                      <mat-form-field  appearance="fill">
+                        <mat-label>Train Ticket</mat-label>
+                        <input matInput type="number" #input maxlength="10" placeholder=""  [(ngModel)]="trainbill" >
+                      </mat-form-field>
+            </div>                       
+             <!-- <input type="text" placeholder=""  [(ngModel)]="tabill"   >
+             <input type="text" placeholder=""  [(ngModel)]="trainbill"   > -->
+
+           
+                        
+                    
+
+                  <div class="example-container">
+    
+                    <mat-form-field  appearance="fill">
+                        <mat-label>Lodge</mat-label>
+                        <input matInput #input maxlength="10" placeholder="">
+                      </mat-form-field>
+                      <mat-form-field  appearance="fill">
+                        <mat-label>Reason</mat-label>
+                        <input matInput #input maxlength="10" placeholder="">
+                      </mat-form-field>
+            
+                  
+                  </div>
+                  <div class="example-container">
+                    <mat-form-field  appearance="fill">
+                        <mat-label>Total Amount </mat-label>
+                        <input matInput #input maxlength="10" value="{{tabill+trainbill+busbill+airbill}}" placeholder="">
+                      </mat-form-field>
+                </div>
+              </div>
+              
+        </mat-grid-tile>
+      
+      </mat-grid-list>
+      <section>
+        
+        <div class="example-button-row buttons">
+          <button mat-raised-button color="primary" (click)="save()">Save</button>&nbsp; 
+          <button mat-raised-button color="primary" >Cancel</button>
+        </div>
+      </section>  </mat-card>
+  <br>
+
